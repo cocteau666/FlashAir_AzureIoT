@@ -7,7 +7,7 @@ Tested with W-04 with FlashAir_Timestamp.
 API
 ====================
 + Device API (delete device, get device, get devices)
-+ Device Twin API (get device twin)
++ Device Twin API (get device twin, update device twin)
 
 
 How to use
@@ -49,6 +49,10 @@ Write this lines in your Lua program.
     
     -- get specific device twin (for example, id is "test123")
     res = deviceTwin.getDeviceTwin(fa, iotName, "test123", auth)
+    print(res.."\n")
+    
+    -- update device twin parameter (for example, add "devicename" property)
+    res = deviceTwin.updateDeviceTwin(fa, iotName, "test123", auth, '{"deviceId":"test123","etag":"AAAAAAAAAAE=","properties":{"desired":{"devicename":"jsoniotdevice","$metadata":{"$lastUpdated":"2017-06-27T09:16:22.9951692Z"},"$version":1},"reported":{"$metadata":{"$lastUpdated":"2017-06-27T09:16:22.9951692Z"},"$version":1}}}')
     print(res.."\n")
 
 
