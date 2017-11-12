@@ -1,14 +1,14 @@
 # FlashAir_AzureIoT
 This library is for using AzureIoT from FlashAir.
 
-Tested with W-04 with FlashAir_Timestamp.
+Tested with W-04 with [FlashAir_Timestamp](https://github.com/cocteau666/FlashAir_Timestamp).
 
 
 API
 ====================
 + Device API (delete device, get device, get devices)
 + Device Twin API (get device twin, update device twin)
-
++ Http Runtimr API (Send Device Event)
 
 How to use
 ====================
