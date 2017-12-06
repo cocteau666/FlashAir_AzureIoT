@@ -1,7 +1,7 @@
 # FlashAir_AzureIoT
 This library is for using AzureIoT from FlashAir.
 
-Tested with W-04 with [FlashAir_Timestamp](https://github.com/cocteau666/FlashAir_Timestamp).
+Tested with W-04 with [FlashAir_Timestamp](https://github.com/cocteau666/FlashAir_Timestamp). (To fix time with NTP)
 
 
 API
@@ -53,6 +53,10 @@ Write this lines in your Lua program.
     
     -- update device twin parameter (for example, add "devicename" property)
     res = deviceTwin.updateDeviceTwin(fa, iotName, "test123", auth, '{"deviceId":"test123","etag":"AAAAAAAAAAE=","properties":{"desired":{"devicename":"jsoniotdevice","$metadata":{"$lastUpdated":"2017-06-27T09:16:22.9951692Z"},"$version":1},"reported":{"$metadata":{"$lastUpdated":"2017-06-27T09:16:22.9951692Z"},"$version":1}}}')
+    print(res.."\n")
+
+    -- send device event
+    res = httpRuntime.sendDeviceEvent(fa, iotName, "test123", auth, '{"deviceId":"test123","temperature":20}')
     print(res.."\n")
 
 
